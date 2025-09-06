@@ -119,11 +119,11 @@ function Experience() {
     status: "Freelance",
     icon: FaDatabase,
     color: "from-cyan-500 to-blue-600",
-    description: "Projet freelance avec FOXYDEVS : API Payante pour l’exploitation des données de véhicule B2B.",
+    description: "Projet freelance avec FOXYDEVS : API Payante pour l'exploitation des données de véhicule B2B.",
     role: "Développeur Full-Stack",
     technologies: [SiReact, SiNodedotjs, SiExpress, SiMysql, SiMongodb],
     features: [
-      "Design de l'architecture de l’API",
+      "Design de l'architecture de l'API",
       "Mise en place du site vitrine avec React.js",
       "Backend API avec Node.js et Express.js",
       "Gestion des paiements et facturation",
@@ -210,32 +210,33 @@ function Experience() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className='group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border border-gray-700 hover:border-designColor transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl overflow-hidden'
+        className='group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-designColor transition-all duration-500 transform hover:scale-[1.01] sm:hover:scale-[1.02] hover:shadow-2xl overflow-hidden'
       >
         <div className='relative'>
           <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.color}`}></div>
           
-          <div className='p-6 lg:p-8'>
-            {/* Header */}
-            <div className='flex items-start justify-between mb-6'>
-              <div className='flex items-center gap-4'>
-                <div className={`w-14 h-14 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <IconComponent className='text-2xl text-white' />
+          <div className='p-4 sm:p-6 lg:p-8'>
+            {/* Header - Responsive Layout */}
+            <div className='flex flex-col sm:flex-row sm:items-start justify-between mb-4 sm:mb-6 gap-4'>
+              <div className='flex items-start gap-3 sm:gap-4 flex-1'>
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                  <IconComponent className='text-lg sm:text-2xl text-white' />
                 </div>
-                <div>
-                  <h3 className='text-xl lg:text-2xl font-bold text-white group-hover:text-designColor transition-colors duration-300'>
+                <div className='flex-1 min-w-0'>
+                  <h3 className='text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-designColor transition-colors duration-300 break-words'>
                     {project.title}
                   </h3>
-                  <p className='text-gray-400 font-medium'>{project.subtitle}</p>
+                  <p className='text-sm sm:text-base text-gray-400 font-medium break-words'>{project.subtitle}</p>
                 </div>
               </div>
               
-              <div className='flex flex-col items-end gap-2'>
-                <div className={`px-3 py-1 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-full border border-current`}>
-                  <span className='text-white text-sm font-semibold'>{project.period}</span>
+              {/* Status badges - Stack on mobile */}
+              <div className='flex flex-row sm:flex-col items-start sm:items-end gap-2 flex-shrink-0'>
+                <div className={`px-2 sm:px-3 py-1 bg-gradient-to-r ${project.color} bg-opacity-20 rounded-full border border-current`}>
+                  <span className='text-white text-xs sm:text-sm font-semibold whitespace-nowrap'>{project.period}</span>
                 </div>
                 {project.status && (
-                  <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+                  <div className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
                     project.status === 'En production' 
                       ? 'bg-green-500 bg-opacity-20 text-green-400 border border-green-500' 
                       : project.status === 'Interne'
@@ -249,71 +250,71 @@ function Experience() {
             </div>
 
             {/* Description */}
-            <p className='text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300'>
+            <p className='text-sm sm:text-base text-gray-300 leading-relaxed mb-4 sm:mb-6 group-hover:text-gray-200 transition-colors duration-300'>
               {project.description}
             </p>
 
-            {/* Role (for projects) or Features */}
+            {/* Role (for projects) */}
             {project.role && (
-              <div className='mb-6'>
-                <h4 className='text-designColor font-semibold mb-2'>Mon rôle :</h4>
-                <p className='text-gray-400 text-sm'>{project.role}</p>
+              <div className='mb-4 sm:mb-6'>
+                <h4 className='text-designColor font-semibold mb-2 text-sm sm:text-base'>Mon rôle :</h4>
+                <p className='text-gray-400 text-xs sm:text-sm'>{project.role}</p>
               </div>
             )}
 
-            {/* Features/Responsibilities */}
+            {/* Features/Responsibilities - Responsive Grid */}
             {(project.features || project.responsibilities) && (
-              <div className='mb-6'>
-                <h4 className='text-white font-semibold mb-3'>
+              <div className='mb-4 sm:mb-6'>
+                <h4 className='text-white font-semibold mb-3 text-sm sm:text-base'>
                   {project.features ? 'Fonctionnalités clés :' : 'Responsabilités :'}
                 </h4>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-2'>
                   {(project.features || project.responsibilities)?.map((item, index) => (
-                    <div key={index} className='flex items-center gap-2'>
-                      <div className='w-2 h-2 bg-designColor rounded-full'></div>
-                      <span className='text-gray-300 text-sm'>{item}</span>
+                    <div key={index} className='flex items-start gap-2'>
+                      <div className='w-1.5 h-1.5 sm:w-2 sm:h-2 bg-designColor rounded-full mt-2 flex-shrink-0'></div>
+                      <span className='text-gray-300 text-xs sm:text-sm leading-relaxed'>{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Technologies */}
-            <div className='mb-6'>
-              <h4 className='text-white font-semibold mb-3'>Technologies :</h4>
-              <div className='flex flex-wrap gap-3'>
+            {/* Technologies - Responsive Layout */}
+            <div className='mb-4 sm:mb-6'>
+              <h4 className='text-white font-semibold mb-3 text-sm sm:text-base'>Technologies :</h4>
+              <div className='flex flex-wrap gap-2 sm:gap-3'>
                 {project.technologies?.map((TechIcon, index) => (
-                  <div key={index} className='w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300'>
-                    <TechIcon className='text-lg text-white' />
+                  <div key={index} className='w-8 h-8 sm:w-10 sm:h-10 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300'>
+                    <TechIcon className='text-sm sm:text-lg text-white' />
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Actions */}
+            {/* Actions - Responsive Button */}
             {project.url && (
               <div className='flex gap-3'>
                 <a 
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className='flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-designColor to-designColor hover:from-designColor hover:to-designColor text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 text-sm'
+                  className='flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-designColor to-designColor hover:from-designColor hover:to-designColor text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 text-xs sm:text-sm w-full sm:w-auto'
                 >
-                  <FaExternalLinkAlt className='text-sm' />
-                  Voir le site
+                  <FaExternalLinkAlt className='text-xs sm:text-sm' />
+                  <span>Voir le site</span>
                 </a>
               </div>
             )}
 
             {/* Professional experience specific */}
             {project.achievements && (
-              <div className='mt-6 pt-6 border-t border-gray-700'>
-                <h4 className='text-white font-semibold mb-3'>Réalisations :</h4>
+              <div className='mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-700'>
+                <h4 className='text-white font-semibold mb-3 text-sm sm:text-base'>Réalisations :</h4>
                 <div className='space-y-2'>
                   {project.achievements.map((achievement, index) => (
-                    <div key={index} className='flex items-center gap-2'>
-                      <div className='w-2 h-2 bg-green-400 rounded-full'></div>
-                      <span className='text-gray-300 text-sm'>{achievement}</span>
+                    <div key={index} className='flex items-start gap-2'>
+                      <div className='w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full mt-2 flex-shrink-0'></div>
+                      <span className='text-gray-300 text-xs sm:text-sm leading-relaxed'>{achievement}</span>
                     </div>
                   ))}
                 </div>
@@ -329,72 +330,63 @@ function Experience() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
-      className='w-full py-10'
+      className='w-full py-6 sm:py-10 px-4 sm:px-6 lg:px-0'
     >
-      {/* Navigation Tabs */}
-     <div className="flex justify-center mb-12">
-  <div className="bg-gray-900 p-2 rounded-full border border-gray-700 shadow-md flex gap-2">
-    <button
-      onClick={() => setActiveTab('professional')}
-      className={`
-        relative flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300
-        ${activeTab === 'professional'
-          ? 'bg-gradient-to-r from-[#ff014f] to-pink-600 text-white shadow-lg shadow-pink-500/40 scale-105'
-          : 'text-gray-400 hover:text-white hover:bg-gray-800'}
-      `}
-    >
-      {activeTab === 'professional' && (
-        <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ff014f] to-pink-600 opacity-30 blur-lg"></span>
-      )}
-      <FaBriefcase className="text-lg relative z-10" />
-      <span className="hidden sm:inline relative z-10">Expérience Pro</span>
-    </button>
+      {/* Navigation Tabs - Enhanced Mobile */}
+   <div className="flex justify-center mb-8 sm:mb-12">
+  <div className="relative w-full max-w-xl">
+    <div className="bg-slate-800/80 backdrop-blur-sm p-2 rounded-full border border-slate-700/50 shadow-2xl shadow-slate-900/50">
+      <div className="flex flex-wrap gap-2 justify-center">
+        {[
+          { id: 'professional', title: 'Expérience Pro', icon: FaBriefcase },
+          { id: 'projects', title: 'Projets', icon: FaCode },
+          { id: 'academic', title: 'Académique', icon: FaGraduationCap },
+        ].map((category) => {
+          const IconComponent = category.icon;
+          const isActive = activeTab === category.id;
 
-    <button
-      onClick={() => setActiveTab('projects')}
-      className={`
-        relative flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300
-        ${activeTab === 'projects'
-          ? 'bg-gradient-to-r from-[#ff014f] to-pink-600 text-white shadow-lg shadow-pink-500/40 scale-105'
-          : 'text-gray-400 hover:text-white hover:bg-gray-800'}
-      `}
-    >
-      {activeTab === 'projects' && (
-        <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ff014f] to-pink-600 opacity-30 blur-lg"></span>
-      )}
-      <FaCode className="text-lg relative z-10" />
-      <span className="hidden sm:inline relative z-10">Projets</span>
-    </button>
-
-    <button
-      onClick={() => setActiveTab('academic')}
-      className={`
-        relative flex items-center gap-3 px-6 py-3 rounded-full font-semibold transition-all duration-300
-        ${activeTab === 'academic'
-          ? 'bg-gradient-to-r from-[#ff014f] to-pink-600 text-white shadow-lg shadow-pink-500/40 scale-105'
-          : 'text-gray-400 hover:text-white hover:bg-gray-800'}
-      `}
-    >
-      {activeTab === 'academic' && (
-        <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#ff014f] to-pink-600 opacity-30 blur-lg"></span>
-      )}
-      <FaGraduationCap className="text-lg relative z-10" />
-      <span className="hidden sm:inline relative z-10">Académique</span>
-    </button>
+          return (
+            <button
+              key={category.id}
+              onClick={() => setActiveTab(category.id)}
+              className={`
+                relative flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base
+                ${isActive 
+                  ? 'bg-gradient-to-r from-[#ff014f] to-pink-600 text-white shadow-lg shadow-pink-500/40 scale-105' 
+                  : 'text-gray-400 hover:text-white hover:bg-gray-800'}
+              `}
+            >
+              {isActive && (
+                <>
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 opacity-20 blur-xl"></span>
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500/40 via-red-500/40 to-orange-500/40 animate-pulse"></span>
+                </>
+              )}
+              <IconComponent
+                className={`relative z-10 w-4 h-4 sm:w-5 sm:h-5 ${isActive ? 'scale-110' : ''}`}
+              />
+              <span className="relative z-10 font-medium tracking-wide">
+                {category.title}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
   </div>
 </div>
 
 
       {/* Content */}
-      <div className='space-y-8'>
+      <div className='space-y-6 sm:space-y-8'>
         {/* Professional Experience */}
         {activeTab === 'professional' && (
           <div>
-            <div className='flex items-center gap-4 mb-8'>
-              <div className='w-12 h-12 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center'>
-                <FaBriefcase className='text-2xl text-blue-500' />
+            <div className='flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8'>
+              <div className='w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0'>
+                <FaBriefcase className='text-lg sm:text-2xl text-blue-500' />
               </div>
-              <h2 className='text-3xl md:text-4xl font-bold text-white'>Expérience Professionnelle</h2>
+              <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white'>Expérience Professionnelle</h2>
             </div>
             {professionalExperience.map((exp) => (
               <ProjectCard key={exp.id} project={exp} type="professional" />
@@ -405,13 +397,13 @@ function Experience() {
         {/* Projects */}
         {activeTab === 'projects' && (
           <div>
-            <div className='flex items-center gap-4 mb-8'>
-              <div className='w-12 h-12 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center'>
-                <FaCode className='text-2xl text-green-500' />
+            <div className='flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8'>
+              <div className='w-10 h-10 sm:w-12 sm:h-12 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0'>
+                <FaCode className='text-lg sm:text-2xl text-green-500' />
               </div>
-              <h2 className='text-3xl md:text-4xl font-bold text-white'>Projets Réalisés</h2>
+              <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white'>Projets Réalisés</h2>
             </div>
-            <div className='grid grid-cols-1 xl:grid-cols-2 gap-8'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8'>
               {projects.map((project) => (
                 <ProjectCard key={project.id} project={project} type="project" />
               ))}
@@ -422,13 +414,13 @@ function Experience() {
         {/* Academic Projects */}
         {activeTab === 'academic' && (
           <div>
-            <div className='flex items-center gap-4 mb-8'>
-              <div className='w-12 h-12 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center'>
-                <FaGraduationCap className='text-2xl text-purple-500' />
+            <div className='flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8'>
+              <div className='w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center flex-shrink-0'>
+                <FaGraduationCap className='text-lg sm:text-2xl text-purple-500' />
               </div>
-              <h2 className='text-3xl md:text-4xl font-bold text-white'>Projets Académiques</h2>
+              <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white'>Projets Académiques</h2>
             </div>
-            <div className='space-y-8'>
+            <div className='space-y-6 sm:space-y-8'>
               {academicProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} type="academic" />
               ))}
@@ -437,41 +429,41 @@ function Experience() {
         )}
       </div>
 
-      {/* Statistics */}
-      <div className='mt-16 bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700'>
-        <h3 className='text-2xl font-bold text-white mb-8 text-center'>Aperçu de mon Parcours</h3>
+      {/* Statistics - Enhanced Responsive */}
+      <div className='mt-12 sm:mt-16 bg-gradient-to-r from-gray-800 to-gray-900 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-gray-700'>
+        <h3 className='text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center'>Aperçu de mon Parcours</h3>
         
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6'>
           <div className='text-center group'>
-            <div className='w-16 h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-              <FaBriefcase className='text-2xl text-blue-500' />
+            <div className='w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300'>
+              <FaBriefcase className='text-lg sm:text-2xl text-blue-500' />
             </div>
-            <div className='text-3xl font-bold text-white mb-2'>1+</div>
-            <div className='text-gray-400'>Année d'expérience</div>
+            <div className='text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2'>1+</div>
+            <div className='text-gray-400 text-xs sm:text-base'>Année d'expérience</div>
           </div>
 
           <div className='text-center group'>
-            <div className='w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-              <FaCode className='text-2xl text-green-500' />
+            <div className='w-12 h-12 sm:w-16 sm:h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300'>
+              <FaCode className='text-lg sm:text-2xl text-green-500' />
             </div>
-            <div className='text-3xl font-bold text-white mb-2'>8+</div>
-            <div className='text-gray-400'>Projets réalisés</div>
+            <div className='text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2'>8+</div>
+            <div className='text-gray-400 text-xs sm:text-base'>Projets réalisés</div>
           </div>
 
           <div className='text-center group'>
-            <div className='w-16 h-16 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-              <FaUsers className='text-2xl text-purple-500' />
+            <div className='w-12 h-12 sm:w-16 sm:h-16 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300'>
+              <FaUsers className='text-lg sm:text-2xl text-purple-500' />
             </div>
-            <div className='text-3xl font-bold text-white mb-2'>5+</div>
-            <div className='text-gray-400'>Clients satisfaits</div>
+            <div className='text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2'>5+</div>
+            <div className='text-gray-400 text-xs sm:text-base'>Clients satisfaits</div>
           </div>
 
           <div className='text-center group'>
-            <div className='w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
-              <FaCog className='text-2xl text-orange-500' />
+            <div className='w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300'>
+              <FaCog className='text-lg sm:text-2xl text-orange-500' />
             </div>
-            <div className='text-3xl font-bold text-white mb-2'>15+</div>
-            <div className='text-gray-400'>Technologies maîtrisées</div>
+            <div className='text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2'>15+</div>
+            <div className='text-gray-400 text-xs sm:text-base'>Technologies maîtrisées</div>
           </div>
         </div>
       </div>

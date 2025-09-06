@@ -8,8 +8,8 @@ function Navbar() {
  
   const [showMenu,setShowMenu]=useState(false)
   return (
-    <div className='w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600' >
-      <div className="text-3xl font-extrabold bg-gradient-to-r from-[#ff014f] via-pink-500 to-purple-600 bg-clip-text text-transparent">
+    <div className="w-full h-20 sticky top-0 z-50 bg-bodyColor flex justify-between items-center px-6 md:px-10 lg:px-20 font-titleFont border-b border-gray-600">
+      <div className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-[#ff014f] via-pink-500 to-purple-600 bg-clip-text text-transparent">
        Hamadouche Fatima Zohra
       </div>
 

@@ -50,9 +50,14 @@ function Resume() {
 
             </ul>
         </div>
-        {educationData &&    <Education/> }
-        {skillData && <Skills/> }
-        {experienceData && <Experience/>}
+        {educationData &&    <Education /> }
+        {skillData && 
+        <Skills 
+         onExperience={()=>{
+          setSkillData(false)
+          setExperienceData(true)
+          }}/> }
+        {experienceData && <Experience />}
    
     </section>
   )
