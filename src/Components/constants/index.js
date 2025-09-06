@@ -13,7 +13,7 @@ export const navLinksdata=[
     
     {
         _id:1004,
-        title:"Résumé",
+        title:"Parcours",
         link:"resume",
     },
     {
