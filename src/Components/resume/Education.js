@@ -11,7 +11,7 @@ function Education() {
       institution: "Université des Sciences et de la Technologie Houari Boumediène (USTHB)",
       location: "Alger, Algérie",
       period: "2020 - 2022",
-      grade: "Bien",
+      grade: "Assez Bien",
       description: "Objectif : acquérir des compétences en ingénierie des logiciels permettant d'intégrer le monde professionnel pour la conception, le développement et l'assurance qualité des systèmes logiciels.",
       icon: FaGraduationCap,
       color: "from-blue-500 to-purple-600"
@@ -22,7 +22,7 @@ function Education() {
       institution: "Université des Sciences et de la Technologie Houari Boumediène (USTHB)",
       location: "Alger, Algérie",
       period: "2016 - 2020",
-      grade: "Assez Bien",
+      grade: "Bien",
       description: "Objectif : maîtriser les compétences disciplinaires en ingénierie des logiciels et des systèmes d'information pour être opérationnel dans le milieu professionnel, comprendre les fonctions et objectifs de l'entreprise, et coopérer efficacement.",
       icon: MdSchool,
       color: "from-green-500 to-teal-600"
