@@ -191,7 +191,7 @@ function Experience() {
       id: 2,
       title: "Application Bloggar",
       subtitle: "Projet Personnel",
-      period: "2023",
+      period: "2022",
       icon: FaCode,
       color: "from-green-500 to-blue-600",
       description: "Application web permettant aux utilisateurs de se connecter et de gérer les publications et commentaires.",
