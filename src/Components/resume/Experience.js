@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaBriefcase, FaGraduationCap, FaCode, FaExternalLinkAlt, FaDatabase, FaCog, FaUsers, FaShoppingCart, FaCalendarAlt, FaBrain, FaTruck, FaCar } from 'react-icons/fa'
-import { SiReact, SiNodedotjs, SiMongodb,SiMysql, SiJavascript, SiTypescript, SiTailwindcss, SiExpress, SiAndroid, SiLaravel, SiPhp } from 'react-icons/si'
+import { SiReact, SiNodedotjs, SiMongodb,SiMysql, SiRedux, SiBootstrap, SiJquery,SiJavascript, SiTypescript, SiTailwindcss, SiExpress, SiAndroid, SiLaravel, SiPhp } from 'react-icons/si'
 import { DiJava } from "react-icons/di";
 
 function Experience() {
@@ -131,7 +131,7 @@ function Experience() {
       "MongoDB pour données de véhicules"
     ]
   },
-    {
+  {
       id: 6,
       title: "Application Myda",
       subtitle: "Livraison Alimentaire Mobile",
@@ -148,7 +148,26 @@ function Experience() {
         "Intégration paiements",
         "Géolocalisation livreurs"
       ]
-    }
+    },
+    {
+  id: 7,
+  title: "FoxyDevs",
+  subtitle: "Agence Web & Mobile",
+  period: "2023",
+  status: "En production",
+  url: "https://foxydevs.com",
+  icon: FaCode,
+  color: "from-teal-500 to-green-600",
+  description:
+    "Site vitrine de l'agence FOXYDEVS spécialisée en développement web et mobile.",
+  role: "Développement du site vitrine, optimisation performance et intégrations front-end",
+  technologies: [SiReact, SiRedux, SiBootstrap, SiJquery],
+  features: [
+    "Sécurité renforcée avec HSTS",
+    "Animations graphiques avec particles.js, AOS et Slick",
+  ]
+}
+
   ]
 
   const academicProjects = [
